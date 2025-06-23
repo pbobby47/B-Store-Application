@@ -20,6 +20,9 @@
   - express.static(...) → Serves static assets.
   - path.join(\_\_dirname, "public") → Resolves the absolute path to the public directory.
   - \_\_dirname → The current directory of the file.
+- **app.set("view engine", "ejs");**
+  - This line tells your Express.js app to use EJS (Embedded JavaScript) as the template engine for rendering dynamic HTML pages.
+  - EJS stands for Embedded JavaScript. It allows you to write HTML pages that include dynamic content using JavaScript-like syntax.
 
 ## Others
 

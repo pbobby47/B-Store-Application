@@ -23,6 +23,13 @@ app.use(express.static(path.join(__dirname, "public")));
 // path.join(__dirname, "public") → Resolves the absolute path to the public directory.
 // __dirname → The current directory of the file.
 
+app.set("view engine", "ejs");
+// This line tells your Express.js app to use EJS (Embedded JavaScript) as the template engine for rendering dynamic HTML pages.
+// EJS stands for Embedded JavaScript. It allows you to write HTML pages that include dynamic content using JavaScript-like syntax.
+
+
+
+
 app.get("/", (req, res) => {
   res.end("Hello Bobby");
 });
