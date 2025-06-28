@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const db = require("./../config/mongooseConnection");
+// console.log(db);
 
-router.get("/", (req, res) => {
-  res.send("Yes, It's working from products router");
+router.get("/", async (req, res) => {
+  res.json("Yes , Its working from Products");
 });
 
 module.exports = router;

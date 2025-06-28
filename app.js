@@ -8,6 +8,7 @@ const usersRouter = require("./routes/usersRouter");
 const app = express();
 
 const db = require("./config/mongooseConnection");
+// console.log(db);
 
 app.use(express.json());
 // This middleware parses incoming JSON payloads (i.e., Content-Type: application/json) and makes the parsed data available on req.body
@@ -32,13 +33,15 @@ app.set("view engine", "ejs");
 // This line tells your Express.js app to use EJS (Embedded JavaScript) as the template engine for rendering dynamic HTML pages.
 // EJS stands for Embedded JavaScript. It allows you to write HTML pages that include dynamic content using JavaScript-like syntax.
 
-// ROUTES
+// ROUTES Mounting
 app.use("/owners", ownersRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 
 app.get("/", (req, res) => {
-  res.end("Hello Bobby");
+  res.send("Hello Bobby");
 });
 
-app.listen(8000);
+app.listen(8000, () => {
+  console.log("server has started");
+});
