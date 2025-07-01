@@ -28,6 +28,12 @@
 
 - **MyModel.create()**
   - It is an equivalent to _new MyModel().save()_
+  - It helps us create one or more documents in to a collection.
+  - Syntax: ModelName.create( {document} );
+  - Syntax: ModelName.create( [{document}, {document}, {document}, ...] );
+  - If we want to pass any options, first Paramter must be array only.
+  - Syntax: ModelName.create( [{document}, {document}, {document}, ...], { options} );
+  - Syntax: ModelName.create( [ {document} ], { options} );
 
 ## security
 
@@ -47,6 +53,15 @@
     - Step 3: Compare the password at singin
   - [bcrypt Package Link](https://www.npmjs.com/package/bcrypt)
   - [bcrypt Online Generator](https://bcrypt-generator.com/)
+  - Here's how to hash a password using `bcrypt` with salt:
+
+    ```js
+    bcrypt.genSalt(saltRounds, function (err, salt) {
+      bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
+        // Store hash in your password DB.
+      });
+    });
+    ```
 
 ## Others
 
